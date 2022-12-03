@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  web:
+    build: .
+    container_name: rust
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - 4000:4000
+    networks:
+      - consul
+    command: bash -c "cargo run"
+networks:
+  consul:
+    external: true
