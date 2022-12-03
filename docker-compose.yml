@@ -10,7 +10,7 @@ services:
       - 4000:4000
     networks:
       - consul
-    command: bash -c "cargo run"
+    command: bash -c "cargo build && cargo run"
 networks:
   consul:
     external: true
